@@ -106,10 +106,13 @@
        border-radius: 10px;
        margin: 1em;
      }
-     button > a{
+     button{
        text-decoration: none;
        color: white;
        font-size: 1.4rem;
+     }
+     button:hover{
+       cursor:pointer;
      }
 
      /* animating the first div on loading*/
@@ -308,7 +311,7 @@
     <div class="container">
       <div class="wrapper1">
         <p class="q1">How many people live in your house?</p>
-        <input type="text" placeholder="1" class="people" default="1">
+        <input type="text" placeholder="1" class="people" default="1" id="no_of_people">
       </div>
       <h2 class="section-heading">Electricity <span class="green-accent">Usage</span></h2>
       <table class="table table-striped">
@@ -322,33 +325,33 @@
           <tbody>
             <tr>
               <th scope="row">Refrigerator</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="fridge_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="fridge_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Freezer</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="freezer_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="freezer_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Oven</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="oven_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="oven_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Stovetop(electric)</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="stovetop_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="stovetop_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Dishwasher</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="dishwasher_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="dishwasher_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Microwave</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="microwave_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="microwave_hrs"></td>
             </tr>
           </tbody>
         </table>
@@ -364,23 +367,23 @@
           <tbody>
             <tr>
               <th scope="row">Television</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="tv_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="tv_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Gaming console</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="gaming_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="gaming_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Home Computer</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="computer_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="computer_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Speaker system</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="speaker_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="speaker_hrs"></td>
             </tr>
       
           </tbody>
@@ -397,18 +400,18 @@
           <tbody>
             <tr>
               <th scope="row">Air Conditioner</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="ac_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="ac_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Fans</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="fans_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="fans_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Cooler</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="cooler_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="cooler_hrs"></td>
             </tr>
       
           </tbody>
@@ -425,23 +428,23 @@
           <tbody>
             <tr>
               <th scope="row">Incandescent Bulb</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="incandbulb_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="incandbulb_hrs"></td>
             </tr>
             <tr>
               <th scope="row">LED bulb</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="ledbulb_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="ledbulb_hrs"></td>
             </tr>
             <tr>
               <th scope="row">Incandescent tubelights</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="incandtube_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="incandtube_hrs"></td>
             </tr>
             <tr>
               <th scope="row">LED tubelights</th>
-              <td><input type="number"></td>
-              <td><input type="number" placeholder="hrs/day"></td>
+              <td><input type="number" id="ledtube_quantity"></td>
+              <td><input type="number" placeholder="hrs/day" id="ledtube_hrs"></td>
             </tr>
           </tbody>
         </table>
@@ -456,50 +459,51 @@
      
       <h3 class="section2-subheading">Please support the cause by sharing your daily commute practices.</h3>
       <div class="wrapper">
-          <p class="question">1. Do you commute daily to school/office/workplace</p> <input type="checkbox" checked class="checkbox">
+          <p class="question">1. Do you commute daily to school/office/workplace</p> <input type="checkbox" checked class="checkbox" id="daily_commute_check">
       </div>
       <div class="wrapper">
-          <p class="question">2. If yes, how far is it (in km)</p> <input type="number" placeholder="km" class="number-input">
+          <p class="question">2. If yes, how far is it (in km)</p> <input type="number" placeholder="km" class="number-input" id="daily_commute_distance">
       </div>
       <p class="question">3. What mode of transport do you use.</p>
       <div class="input-group">
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Bus
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_bus" >Bus
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Metro
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_metro" >Metro
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input"class="transport-radio">Rail
+              <input type="checkbox" aria-label="Radio button for following text input"class="transport-radio" id="daily_commute_rail" >Rail
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Car
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_car" >Car
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Carpool
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_carpool" >Carpool
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Taxi
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_taxi" >Taxi
             </div>
             <div class="input-group-text">
-              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Walking <span id=
+              <input type="checkbox" aria-label="Radio button for following text input" class="transport-radio" id="daily_commute_walking" >Walking <span id=
               "recommended">(Recommended)</span>
             </div>
             
       </div>
       <div class="wrapper">
-          <p class="question">4. How many times do you use air travel in a year?</p> <input type="number" class="number-input">
+          <p class="question">4. How many times do you use air travel in a year?</p> <input type="number" class="number-input" id="air_travel_frequency">
       </div>
       <div class="wrapper">
-          <p class="question">5. Estimated number of kilometres?</p><input type="number" class="number-input">
+          <p class="question">5. Estimated number of kilometres per trip?</p><input type="number" class="number-input" id="air_travel_distance">
       </div>
       <div class="wrapper">
-          <p class="question">6. Lastly, do you invest in cryptocurrencies</p> <input type="checkbox" class="checkbox">
+          <p class="question">6. Lastly, do you invest in cryptocurrencies</p> <input type="checkbox" class="checkbox" id="crypto_check">
       </div>
-      <button><a href="form-part2.html">Next</a></button>
+      <button onclick="main_func()">Next</button>
     </div>
     
-
+    <script src="static/form.js" >
+    </script>
     <script>
       (function() {
         var elements;
