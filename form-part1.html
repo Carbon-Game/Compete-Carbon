@@ -4,193 +4,541 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
     <title>Footprint Form</title>
     <style>
-        .slidecontainer {
-        width: 100%; /* Width of the outside container */
-        }
+     *,*::before,*::after{
+       box-sizing: border-box;
+     }
+     body{
+       margin: 0;
+       padding: 0;
+       background-color: #D2FAE0;
+     }
+     .quote-container{
+       background-color: #18ad65;
+       padding: 6em 3em;
+       width: 80%;
+       margin: 0 auto;
+       margin-top: 5em;
+       margin-bottom: 5em;
+       border-radius: 20px;
+       box-shadow: 
+              0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.0005), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+     }
+     .quote-container > h1{
+       font-family: 'Source Serif Pro', serif;
+       font-weight: lighter;
+       font-size: 1.8rem;
+       color: white;
+     }
+     cite{
+       text-align: right;
+       float: right;
+       color: rgb(233, 229, 229);
+       font-size: 1.2rem;
+     }
 
-        /* The slider itself */
-        .slider {
-        -webkit-appearance: none;  /* Override default CSS styles */
-        appearance: none;
-        width: 100%; /* Full-width */
-        height: 25px; /* Specified height */
-        background: #d3d3d3; /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-        transition: opacity .2s;
-        }
+     .title
+     {
+       font-family: 'Ramabhadra';
+       font-size: 3rem;
+       text-align: center;
+     }
+     .green-accent{
+       color: #18ad65;
+     }
+     .wrapper1
+     {
+       display: flex;
+       flex-direction: row;
+     }
+     .title + .title{
+       margin-top: 1em;
+     }
+     .title2{
+       margin-bottom: 2em;
+     }
+     .container{
+       border: 1px solid rgb(83, 83, 83);
+       border-radius: 10px;
+       padding: 2em;
+       padding-bottom: 5em;
+     }
 
-        /* Mouse-over effects */
-        .slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
-        }
+     .q1{
+       font-family: 'Roboto', serif;
+       margin-right: 1em;
+       font-size: 1.3rem;
+       font-weight: bold;
+     }
+     .people{
+       height: 80%;
+       align-items: center;
+       width: 4%;
+       margin-top: 0.1em;
+       font-size: 1.2rem;
+       /* padding: 0; */
+       text-align: center;
+     }
+     .section-heading{
+       text-align: center;
+       font-family: 'Ramabhadra';
+       margin-top: 1.7em;
+       margin-bottom: 1em;
+       font-size: 2.6rem;
+     }
+     button{
+       float: right;
+       padding: 0.4em 3em;
+       background-color: #29c57a;
+       border: none;
+       border-radius: 10px;
+       margin: 1em;
+     }
+     button > a{
+       text-decoration: none;
+       color: white;
+       font-size: 1.4rem;
+     }
 
-        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-        .slider::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Override default look */
-        appearance: none;
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #04AA6D; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-        }
+     /* animating the first div on loading*/
+     .wrapper-title{
+       overflow: hidden;
+       /* border: 1px solid black; */
+       padding: 10em 10em ;
+     }
+     .wrapper-title > *{
+      transform: translateY(560px) rotate(20deg);
+      animation: slideup 1000ms cubic-bezier(0.65, 0, 0.35, 1) 1 forwards;
+      transform-origin: top center;
+     }
+     @keyframes slideup {
+      0% {
+        transform: translateY(560px) rotate(20deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+    /* scroll down arrow */
+   
+    .downArrow{
+      /* position: fixed; */
+      z-index: 20;
+      text-align: center;
+      bottom: 45%;
+      left: 50%;
+      /* margin-bottom: 10em; */
+    }
+    .bounce {
+      -moz-animation: bounce 3s infinite;
+      -webkit-animation: bounce 3s infinite;
+      animation: bounce 3s infinite;
+    }
+    @-moz-keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+      }
+      40% {
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+      60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+      }
+    }
+    @-webkit-keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+      60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+      }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+      }
+      60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+      }
+    }
+    /* Demo Purpose Only*/
+    .demo {
+      font-family: 'Raleway', sans-serif;
+      color:#fff;
+      display: block;
+      margin: 0 auto;
+      padding: 15px 0;
+      text-align: center;
+    }
+    .demo a{
+      font-family: 'Raleway', sans-serif;
+      color: #2ecc71;		
+    }
+    a:hover{
+      text-decoration: none;
+      color: white;
+    }
 
-        .slider::-moz-range-thumb {
-        width: 25px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #04AA6D; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-        }
+    /* section 2*/
+    .container + .container{
+      margin-top: 4em;
+    }
+    .section2-title
+    {
+      margin-top: 5em;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2em;
+    }
+    .blue-accent{
+      color: #05386b;
+    }
+    .section2-subheading{
+      font-size: 1.7rem;
+      margin-bottom: 1.6em;
+    }
+    .question
+    {
+      font-weight: 600;
+      margin-right: 1em;
+      font-size: 1.2rem;
+    }
+    .wrapper{
+      display: flex;
+      flex-direction: row;
+      margin: 2em 0;
+      /* border: 1px solid black; */
+      align-items:center;
+    }
+    .checkbox{
+      width: 20px;
+      height: 25px;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 0.5em;
+    }
+    .number-input{
+      width: 10%;
+      /* text-align: center; */
+      margin-bottom: 0.5em;
+    }
+    .input-group-text{
+      border: none;
+      background-color: transparent;
+      font-size: 1.1rem;
+      /* color: black; */
+      padding: 1em;
+    }
+    .transport-radio{
+      margin-right: 0.8em;
+    }
+    .container2{
+      margin-bottom: 7em;
+    }
+    .hidden{
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    .fade-in-element{
+      animation: fade-in 2.5s cubic-bezier(.03,.94,.16,1.13);
+    }
+    @keyframes fade-in 
+    {
+      0%{
+        opacity: 0;
+        
+        transform: translateY(40px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+   
     </style>
 </head>
 <body>
-    <h1>“...But it is the sufferings of the many which pay for the luxuries of a few.”</h1>
-    i<span>- Greta Thunberg</span>
-    <h2>Please take out some time to answer the following questions and help save the environment</h2>
-    <h3>How many people live in your house?</h3>
-    <input type="text" placeholder="No. of people">
-    <h2>Electricity Usage</h2>
-    <h3>Please tell us about your appliance usage - </h3> 
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Appliance</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Time Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Refrigerator</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Freezer</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Oven</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Stovetop(electric)</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Dishwasher</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Microwave</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-        </tbody>
-      </table>
-      <h3>Please provide information about your Entertainment power usage</h3>
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Appliance</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Time Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Television</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Gaming console</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Home Computer</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Speaker system</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          
-        </tbody>
-      </table>
+    
+      <!-- <div class="quote-container">
+        <h1>“...But it is the sufferings of the many which pay for the luxuries of a few.”</h1>
+        <cite>- Greta Thunberg</cite>
+      </div> -->
+    <div class="wrapper-title">
+      <h2 class="title title1">Saving the <span class="green-accent">environment</span> can be fun. </h2><h2 class="title title2"> Answer the following questions to start competing with your friends <span class="green-accent">now</span></h2>
+      <div class="downArrow bounce">
+        <img width="40" height="40" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
+      </div>
+    </div>
 
-      <h3>Please tell us about your cooling usage</h3>
+    
+    
+    <div class="container">
+      <div class="wrapper1">
+        <p class="q1">How many people live in your house?</p>
+        <input type="text" placeholder="1" class="people" default="1">
+      </div>
+      <h2 class="section-heading">Electricity <span class="green-accent">Usage</span></h2>
       <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Appliance</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Time Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Air Conditioner</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Fans</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Cooler</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          
-        </tbody>
-      </table>
-      <h3>Please enter your Lighting usage</h3>
+          <thead>
+            <tr>
+              <th scope="col">Appliance</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Time Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Refrigerator</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Freezer</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Oven</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Stovetop(electric)</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Dishwasher</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Microwave</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="section-heading">Entertainment <span class="green-accent">Usage</span></h2>
       <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Appliance</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Time Used</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Incandescent Bulb</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">LED bulb</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">Incandescent tubelights</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-          <tr>
-            <th scope="row">LED tubelights</th>
-            <td><input type="number"></td>
-            <td><input type="number" placeholder="hrs/day"></td>
-          </tr>
-        </tbody>
-      </table>
-      <button><a href="form-part2.html">Next</a></button>
+          <thead>
+            <tr>
+              <th scope="col">Appliance</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Time Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Television</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Gaming console</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Home Computer</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Speaker system</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
       
+          </tbody>
+        </table>
+        <h2 class="section-heading">Cooling <span class="green-accent">Usage</span></h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Appliance</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Time Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Air Conditioner</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Fans</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Cooler</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+      
+          </tbody>
+        </table>
+        <h2 class="section-heading">Lighting <span class="green-accent">Usage</span></h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Appliance</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Time Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Incandescent Bulb</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">LED bulb</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">Incandescent tubelights</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+            <tr>
+              <th scope="row">LED tubelights</th>
+              <td><input type="number"></td>
+              <td><input type="number" placeholder="hrs/day"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+        
+    </div>
+    <div class="hidden">
+      <h1 class="section2-title title"><span class="green-accent">Vehicular emissions</span> are one of the major cause for <span class="blue-accent">global</span> <span class="blue-accent">warming.</h1>
+    </div>
+    <div class="container container2">
+     
+      <h3 class="section2-subheading">Please support the cause by sharing your daily commute practices.</h3>
+      <div class="wrapper">
+          <p class="question">1. Do you commute daily to school/office/workplace</p> <input type="checkbox" checked class="checkbox">
+      </div>
+      <div class="wrapper">
+          <p class="question">2. If yes, how far is it (in km)</p> <input type="number" placeholder="km" class="number-input">
+      </div>
+      <p class="question">3. What mode of transport do you use.</p>
+      <div class="input-group">
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Bus
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Metro
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input"class="transport-radio">Rail
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Car
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Carpool
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Taxi
+            </div>
+            <div class="input-group-text">
+              <input type="radio" aria-label="Radio button for following text input" class="transport-radio">Walking <span id=
+              "recommended">(Recommended)</span>
+            </div>
+            
+      </div>
+      <div class="wrapper">
+          <p class="question">4. How many times do you use air travel in a year?</p> <input type="number" class="number-input">
+      </div>
+      <div class="wrapper">
+          <p class="question">5. Estimated number of kilometres?</p><input type="number" class="number-input">
+      </div>
+      <div class="wrapper">
+          <p class="question">6. Lastly, do you invest in cryptocurrencies</p> <input type="checkbox" class="checkbox">
+      </div>
+      <button><a href="form-part2.html">Next</a></button>
+    </div>
+    
+
+    <script>
+      (function() {
+        var elements;
+        var windowHeight;
+
+        function init() {
+          elements = document.querySelectorAll('.hidden');
+          windowHeight = window.innerHeight;
+        }
+
+        function checkPosition() {
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = elements[i].getBoundingClientRect().top;
+
+            if (positionFromTop - windowHeight <= 0) {
+              element.classList.add('fade-in-element');
+              element.classList.remove('hidden');
+            }
+          }
+        }
+
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', init);
+
+      init();
+      checkPosition();
+    })();
+    </script>
+    <script>
+      const section2_title = document.querySelector('.section2-title');
+
+      function load_animation(){
+        section2_title.style()
+      }
+      console.log(section2_title);
+      section2_title.addEventListener('load', load_animation)
+
+    </script>
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
