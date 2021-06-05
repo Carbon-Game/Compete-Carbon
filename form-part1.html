@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Footprint Form</title>
+    <style>
+        .slidecontainer {
+        width: 100%; /* Width of the outside container */
+        }
+
+        /* The slider itself */
+        .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 25px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+        }
+
+        /* Mouse-over effects */
+        .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        }
+
+        .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #04AA6D; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>“...But it is the sufferings of the many which pay for the luxuries of a few.”</h1>
+    i<span>- Greta Thunberg</span>
+    <h2>Please take out some time to answer the following questions and help save the environment</h2>
+    <h3>How many people live in your house?</h3>
+    <input type="text" placeholder="No. of people">
+    <h2>Electricity Usage</h2>
+    <h3>Please tell us about your appliance usage - </h3> 
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Appliance</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Time Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Refrigerator</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Freezer</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Oven</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Stovetop(electric)</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Dishwasher</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Microwave</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Please provide information about your Entertainment power usage</h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Appliance</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Time Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Television</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Gaming console</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Home Computer</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Speaker system</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <h3>Please tell us about your cooling usage</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Appliance</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Time Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Air Conditioner</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Fans</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Cooler</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <h3>Please enter your Lighting usage</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Appliance</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Time Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Incandescent Bulb</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">LED bulb</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">Incandescent tubelights</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+          <tr>
+            <th scope="row">LED tubelights</th>
+            <td><input type="number"></td>
+            <td><input type="number" placeholder="hrs/day"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button><a href="form-part2.html">Next</a></button>
+      
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
