@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            /* background-image: linear-gradient(#74f2ce, #7ee8fa); */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 400%;
+            width: 100%;
+            height: 100%;
+            animation: gradient 4s ease infinite;
+        }
+        .title
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 6rem;
+            color: white;
+        }
+        .accent-hl
+        {
+            color: rgb(5, 255, 80);
+        }
+        .wrapper{
+            padding: 2em;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .dot {
+            display:inline-block;
+            width:12px;
+            height:12px;
+            border-radius:50%;
+            margin-right:3px;
+            /* background:#303131; */
+            animation: wave 1.3s linear infinite;
+            padding-right: 0.3em;
+            
+        }
+        .dot:nth-child(2) {
+                animation-delay: -1.1s;
+            }
+
+        .dot:nth-child(3) {
+            animation-delay: -0.9s;
+        }
+    
+
+    @keyframes wave {
+        0%, 60%, 100% {
+            transform: initial;
+        }
+
+        30% {
+            transform: translateY(-15px);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1 class="title">Please wait while we rank you against <span class="accent-hl">hundreds</span> of other players<span class="stop1 dot">.</span><span class="stop2 dot">.</span><span class="stop3 dot">.</span></h1>
+        </div>
+    </div>
+    
+
+    <script>
+        var timer = setTimeout(function() {
+            window.location='leaderboard.html'
+        }, 6000);
+    </script>
+</body>
+</html>
