@@ -45,7 +45,11 @@ let daily_commute_walking = false;
 let air_travel_frequency = 0;
 let air_travel_distance = 0;
 let crypto_check = false;
+let total_emission = 0;
+let commute_emission = 0;
+let electricity_emission = 0;
 
+document.getElementsByTagName('input').defaultValue = 1;
 function main_func(){
     no_of_people = document.querySelector("#no_of_people").value;
     fridge_quantity = document.querySelector("#fridge_quantity").value;
@@ -135,9 +139,9 @@ function main_func(){
     let power_ledbulb = ((((10*ledbulb_hrs) / 1000) * 365) * ledbulb_quantity) ;
     let power_incandtube = ((((60*incandtube_hrs) / 1000) * 365) * incandtube_quantity) ;
     let power_ledtube = ((((10*ledtube_hrs) / 1000) * 365) * ledtube_quantity) ;
-    let electricity_emission = (((power_fridge + power_freezer + power_oven + power_stovetop + power_dishwasher + power_microwave + power_tv + power_gaming + power_computer + power_speaker + power_ac + power_fan + power_cooler + power_incandbulb + power_ledbulb + power_incandtube + power_ledtube) * 0.7) / no_of_people);
+    electricity_emission = (((power_fridge + power_freezer + power_oven + power_stovetop + power_dishwasher + power_microwave + power_tv + power_gaming + power_computer + power_speaker + power_ac + power_fan + power_cooler + power_incandbulb + power_ledbulb + power_incandtube + power_ledtube) * 0.7) / no_of_people);
     
-    let commute_emission = 0;
+    
     console.log(daily_commute_walking)
     //calculating daily commute
     if(daily_commute_walking==false)
@@ -148,7 +152,11 @@ function main_func(){
         commute_emission = (((air_travel_distance * 4.18) / 150) * air_travel_frequency);
         console.log("Excellent");
     }
-    let total_emission = electricity_emission + commute_emission;
+    total_emission = electricity_emission + commute_emission;
+    console.log(electricity_emission);
+    console.log(commute_emission);
+    console.log(total_emission);
+    demo_func(total_emission);
   }
 
   

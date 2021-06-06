@@ -1,0 +1,372 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container{
+            background-color: rgb(48, 228, 138);
+            overflow: hidden;
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+            justify-content: center;
+            height: 80%;
+        }
+        .wrapper {
+
+            position: relative;
+            height: 30vh;
+            width: 70%;
+            /* border: 1px solid black; */
+            z-index: 1;
+            margin-top: -40px;
+        }
+
+        [class|="confetti"] {
+            position: absolute;
+        }
+
+        .red {
+        background-color: #d13447;
+        }
+
+        .yellow {
+        background-color: #ffbf00;
+        }
+
+        .blue {
+        background-color: #263672;
+        }
+
+        .content{
+            position: absolute;
+            height: 100%;
+            width: 80%;
+            top: 90px;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* border: 1px solid black; */
+            margin: 0 auto;
+        }
+
+        .main_title{
+            font-family: 'Montserrat', sans-serif;
+            color: black;
+            font-size: 5rem;
+            text-align: center;
+        }
+
+        .gleam{
+            background-image: linear-gradient(45deg, #fbde36, #f1c943, #e2a50b, #996515);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+
+        .accent
+        {
+           
+        }
+        .message{
+            font-weight: 300;
+            font-size: 1.6rem;
+            font-family: 'Roboto', serif;
+            position: absolute;
+            top: 390px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .wrapper2{
+            /* border: 1px solid black; */
+            margin-left: 26em
+        }
+        .percent{
+            font-weight: bold;
+            background-image: linear-gradient(45deg, #3a80a0, #b25ee2, #8753e7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+        .leaderboard-section{
+            background-color: rgb(48, 228, 138);
+            width: 100%;
+            height: 250%;
+            border: 1px solid rgb(48, 228, 138);
+        }
+        .champion-title{
+            font-family: 'Montserrat', serif;
+            font-weight:800;
+            font-size: 7rem;
+            text-align: center;
+            background-color: #FFE53B;
+            background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+            
+        }
+       
+        .leaderboard{
+            width: 70%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        .wrapper-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .leaderboard-header{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(17, 55, 158, 0.705);
+            color: white;
+            font-family: 'Roboto', serif;
+            padding: 0.5em 0.7em;
+            font-size: 1.3rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        /* .name{
+            margin-left: -15em;
+        }
+        .carbon-footprint{
+            margin-right: -13em;
+        } */
+        .leaderboard-container{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Roboto', serif;
+            padding: 0.5em 0.8em;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+        }
+        .leaderboard-container:last-child{
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        /* .leaderboard-container:first-child{
+            border:2px solid rgb(199, 175, 39);
+        } */
+        /* .player-name{
+            margin-left: -15em;
+        }
+        .player-carbon-footprint{
+            margin-right: -13em;
+        } */
+        .my-container{
+            border: 1px solid black;
+            background-color: rgb(0, 17, 112);
+            color: white;
+            padding: 6em 4em;
+        }
+        .header_h1{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+
+        }
+        .insta{
+            width: 30px;
+        }
+        .flex{
+            display: flex;
+            flex-direction: row;
+            padding: 2em;
+            justify-content: space-around;
+            align-items: baseline;
+            width: 25%;
+        }
+        .insta:hover{
+            cursor: pointer;
+        }
+        .green{
+            color: rgb(48, 228, 138);
+        }
+    </style>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="N2BqjvRQ"></script>
+    <div class="container">
+        <div class="wrapper"></div>
+        <div class="content">
+            <h1 class="main_title">You ranked <span class="gleam">17th</span> out of <span class="accent">300</span> people</h1>
+        </div>
+    </div>
+    <div class="wrapper2">
+        <h3 class="message"><em>You are doing better than <span class="percent">94%</span> of the people</em></h3>
+        
+    </div>
+    <div class="leaderboard-section">
+        <h1 class="champion-title">Our Champions</h1>
+        <div class="wrapper-container">
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <p class="rank">Rank</p>
+                    <p class="name">Name</p>
+                    <p class="carbon-footprint">Carbon Footprint (kgCO2/yr)</p>
+                    <p class="points">Points</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">1</p>
+                    <p class="player-name">Jonah Hill</p>
+                    <p class="player-carbon-footprint">130</p>
+                    <p class="player-points">4000</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">2</p>
+                    <p class="player-name">Adeeb Mahmud</p>
+                    <p class="player-carbon-footprint">146</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">3</p>
+                    <p class="player-name">Angelina</p>
+                    <p class="player-carbon-footprint">151</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">4</p>
+                    <p class="player-name">Alex Costa</p>
+                    <p class="player-carbon-footprint">186</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">5</p>
+                    <p class="player-name">Tokyo Kia</p>
+                    <p class="player-carbon-footprint">197</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">6</p>
+                    <p class="player-name">Malcolm </p>
+                    <p class="player-carbon-footprint">199</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">7</p>
+                    <p class="player-name">Justin</p>
+                    <p class="player-carbon-footprint">204</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">8</p>
+                    <p class="player-name">Emily</p>
+                    <p class="player-carbon-footprint">210</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">9</p>
+                    <p class="player-name">Whitten</p>
+                    <p class="player-carbon-footprint">217</p>
+                    <p class="player-points">1560</p>
+                </div>
+                <div class="leaderboard-container">
+                    <p class="player-rank">10</p>
+                    <p class="player-name">McGuire</p>
+                    <p class="player-carbon-footprint">220</p>
+                    <p class="player-points">1560</p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="my-container">
+        <div class="header_img"><img src="img/hero-img.jpg" alt=""></div>
+        <div class="wrap">
+            <h1 class="header_h1">Tell the world about how you made the <span class="green">Earth</span> a better place.
+            </h1>
+            <div class="flex">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+                <div class="fb-share-button" data-href="https://www.cssscript.com/demo/confetti-animation-party/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.cssscript.com%2Fdemo%2Fconfetti-animation-party%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></script>
+                <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+                <div class="logo-preview">
+                    <div class="instagram-logo"><div><div></div><div></div></div></div>
+                </div>
+                <img src="img/insta.png" alt="" class="insta">
+                <img src="img/fb.png" alt="" class="insta">
+                <img src="img/pin.png" alt="" class="insta">
+            </div>
+        </div>
+
+    <script>
+        for (var i = 0; i < 150; i++) {
+        create(i);
+        }
+
+        function create(i) {
+        var width = Math.random() * 8;
+        var height = width * 0.4;
+        var colourIdx = Math.ceil(Math.random() * 3);
+        var colour = "red";
+        switch(colourIdx) {
+            case 1:
+            colour = "yellow";
+            break;
+            case 2:
+            colour = "blue";
+            break;
+            default:
+            colour = "red";
+        }
+        $('<div class="confetti-'+i+' '+colour+'"></div>').css({
+            "width" : width+"px",
+            "height" : height+"px",
+            "top" : -Math.random()*20+"%",
+            "left" : Math.random()*100+"%",
+            "opacity" : Math.random()+0.5,
+            "transform" : "rotate("+Math.random()*360+"deg)"
+        }).appendTo('.wrapper');  
+        
+        drop(i);
+        }
+
+        function drop(x) {
+        $('.confetti-'+x).animate({
+            top: "100%",
+            left: "+="+Math.random()*15+"%"
+        }, Math.random()*2000 + 2000, function() {
+            reset(x);
+        });
+        }
+
+        function reset(x) {
+        $('.confetti-'+x).animate({
+            "top" : -Math.random()*20+"%",
+            "left" : "-="+Math.random()*15+"%"
+        }, 0, function() {
+            drop(x);             
+        });
+        }
+    </script>
+
+    <script>
+        //random number generator
+        function genRand(min, max, decimalPlaces) {  
+        var rand = Math.random()*(max-min) + min;
+        var power = Math.pow(10, decimalPlaces);
+        return Math.floor(rand*power) / power;
+        }
+        let emission = genRand(200, 450, 0);
+    </script>
+</body>
+
+</html>
